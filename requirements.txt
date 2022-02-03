@@ -1,0 +1,6 @@
+imutils==0.5.4
+numpy==1.22.1
+opencv-python==4.5.5.62
+Pillow==9.0.1
+pytesseract==0.3.8
+tesseract==0.1.3
