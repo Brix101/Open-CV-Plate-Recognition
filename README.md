@@ -13,8 +13,8 @@ python -m venv venv
 ```
 Step 3. Activate your virtual environment
 ``` bash
-source tfod/bin/activate # Linux
-.\tfod\Scripts\activate # Windows 
+source venv/bin/activate # Linux
+.\venv\Scripts\activate # Windows 
 ```
 Step 4. Install Requirements
 ``` bash
