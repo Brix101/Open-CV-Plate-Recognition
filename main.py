@@ -3,6 +3,8 @@ import imutils
 import numpy as np
 import pytesseract
 from PIL import Image
+import os
+from datetime import datetime
 
 # read image grayscale and blur
 img = cv2.imread('image6.jpg')
@@ -55,11 +57,17 @@ new_image = cv2.bitwise_and(img, img, mask=mask)
 Cropped = gray[topx:bottomx + 1, topy:bottomy + 1]
 
 # Read the number plate
-# text = pytesseract.image_to_string(Cropped, config='--psm 11')
-# print("Detected Number is:", text)
+text = pytesseract.image_to_string(Cropped, config='--psm 11')
+print("Detected Number is:", text)
 
-cv2.imshow('image', img)
-cv2.imshow('Cropped', Cropped)
-
+# Saving Image
+path = './CroppedPlateNumber'
+dateNow = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+cv2.imwrite(os.path.join(path, f'{dateNow}.png'), Cropped)
 cv2.waitKey(0)
-cv2.destroyAllWindows()
+
+# cv2.imshow('image', img)
+# cv2.imshow('Cropped', Cropped)
+
+# cv2.waitKey(0)
+# cv2.destroyAllWindows()

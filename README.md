@@ -18,7 +18,7 @@ source tfod/bin/activate # Linux
 ```
 Step 4. Install Requirements
 ``` bash
-pip install -r requirements.txt
+pip install -r requirements.tx
 ```
 Step 5. Run Program
 ``` bash
